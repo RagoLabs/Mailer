@@ -42,11 +42,7 @@ func (app *application) routes() http.Handler {
 	e.Use(middleware.BodyLimit("2K"))
 
 	e.POST("/submit-contact", app.sendContactEmailHandler)
-	e.POST("/signup", app.sendWelcomeEmailHandler)
-	e.POST("/activate", app.sendActivateEmailHandler)
-	e.POST("/resetpwd", app.sendPasswordResetEmailHandler)
-	e.POST("/completedpwdreset", app.sendResetCompletedEmailHandler)
-	
+
 	return e
 
 }
